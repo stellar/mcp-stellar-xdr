@@ -33,10 +33,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: denoland/setup-deno@e95548e56dfa95d4e1a28d6f422fafe75c4c26fb # v2.0.3
       - name: Test MCP server startup
-        run: timeout 5s deno run --allow-read mcp-stellar-xdr.ts < /dev/null || true
+        run: deno run --allow-read mcp-stellar-xdr.ts
       - name: Test MCP tools
         run: |
           # Test types tool
-          echo '{"jsonrpc": "2.0", "id": 1, "method": "tools/call", "params": {"name": "types"}}' | timeout 5s deno run --allow-read mcp-stellar-xdr.ts | head -1
+          echo '{"jsonrpc": "2.0", "id": 1, "method": "tools/call", "params": {"name": "types"}}' | deno run --allow-read mcp-stellar-xdr.ts
           # Test guess tool with sample XDR
-          echo '{"jsonrpc": "2.0", "id": 2, "method": "tools/call", "params": {"name": "guess", "arguments": {"xdr": "AAAAAgAAAAA="}}}' | timeout 5s deno run --allow-read mcp-stellar-xdr.ts | head -1
+          echo '{"jsonrpc": "2.0", "id": 2, "method": "tools/call", "params": {"name": "guess", "arguments": {"xdr": "AAAAAgAAAAA="}}}' | deno run --allow-read mcp-stellar-xdr.ts
