@@ -40,4 +40,3 @@ jobs:
           echo '{"jsonrpc": "2.0", "id": 1, "method": "tools/call", "params": {"name": "types"}}' | deno run --allow-read mcp-stellar-xdr.ts | grep TransactionEnvelope
           # Test guess tool with sample XDR
           echo '{"jsonrpc": "2.0", "id": 2, "method": "tools/call", "params": {"name": "guess", "arguments": {"xdr": "AAAAAgAAAAA="}}}' | deno run --allow-read mcp-stellar-xdr.ts | grep Uint64
-
