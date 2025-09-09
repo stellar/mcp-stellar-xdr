@@ -12,7 +12,8 @@ Provides five tools:
 
 - `mcp_stellar-xdr_types` - Get the supported XDR types.
 - `mcp_stellar-xdr_json_schema` - Get the JSON schema for an XDR type.
-- `mcp_stellar-xdr_guess` - Guess what type Stellar XDR is, getting back a list of possible types.
+- `mcp_stellar-xdr_guess` - Guess what type Stellar XDR is, getting back a list
+  of possible types.
 - `mcp_stellar-xdr_decode` - Decode a Stellar XDR to JSON.
 - `mcp_stellar-xdr_encode` - Encode a Stellar XDR from JSON.
 
