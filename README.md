@@ -75,12 +75,22 @@ To use with Claude Desktop:
 
 2. Reopen Claude Code.
 
-## Example
+## Examples
 
-### Understanding a Transaction
+### Create an XDR value
 
-https://github.com/user-attachments/assets/8c4eef81-9109-432d-8be6-8e24ead74eef
+![](examples/example-1.gif)
 
-### Understanding a Contract Event
+### Describe a transaction
 
-https://github.com/user-attachments/assets/91523c7e-652e-46f8-92af-2315f408e32d
+![](examples/example-2.gif)
+
+### Answer a specific question about a transaction
+
+![](examples/example-3a.gif)
+
+### Modify a transaction
+
+![](examples/example-3b.gif)
+
+![](examples/example-3c.gif)
