@@ -17,7 +17,7 @@ Provides five tools:
 - `mcp_stellar-xdr_decode` - Decode a Stellar XDR to JSON.
 - `mcp_stellar-xdr_encode` - Encode a Stellar XDR from JSON.
 
-## Usage (General)
+## Usage
 
 To use with agents, setup a `stdio` MCP configuration with your agent calling
 the following command:
@@ -31,49 +31,6 @@ the following command:
 
 If you have `deno` installed you can omit the `npx` command and call `deno`
 directly.
-
-## Usage (Claude Desktop)
-
-To use with Claude Desktop:
-
-1. Add the server config:
-
-   On macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
-
-   On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
-
-   ```json
-   {
-     "mcpServers": {
-       "mcp-stellar-xdr-json": {
-         "command": "npx",
-         "args": [
-           "deno",
-           "run",
-           "--allow-read",
-           "https://github.com/stellar/mcp-stellar-xdr/raw/refs/heads/main/mcp-stellar-xdr.ts"
-         ]
-       }
-     }
-   }
-   ```
-
-2. Reopen Claude Desktop.
-
-## Usage (Claude Code)
-
-1. Add the server config:
-
-   ```
-   claude mcp add \
-     --transport stdio \
-     --scope user \
-     mcp-stellar-xdr \
-     -- \
-     npx deno run --allow-read https://github.com/stellar/mcp-stellar-xdr/raw/refs/heads/main/mcp-stellar-xdr.ts
-   ```
-
-2. Reopen Claude Code.
 
 ## Examples
 
