@@ -107,3 +107,5 @@ main().catch((error) => {
   console.error("Server error:", error);
   Deno.exit(1);
 });
+
+export { server };
