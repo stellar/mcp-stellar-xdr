@@ -15,7 +15,7 @@ await init();
 
 const server = new McpServer({
   name: "mcp-stellar-xdr",
-  version: "0.1.0"
+  version: "0.1.0",
 });
 
 // Register the types tool
@@ -24,12 +24,12 @@ server.registerTool(
   {
     title: "Get Supported XDR Types",
     description: "Get the list of supported XDR types.",
-    inputSchema: {}
+    inputSchema: {},
   },
-  async () => {
+  () => {
     const list = types();
     return { content: [{ type: "text", text: `${JSON.stringify(list)}` }] };
-  }
+  },
 );
 
 // Register the json_schema tool
@@ -40,12 +40,12 @@ server.registerTool(
     description: "Get the JSON schema for a specific XDR type.",
     inputSchema: {
       type: z.string().describe("XDR type"),
-    }
+    },
   },
-  async ({ type }) => {
+  ({ type }) => {
     const json_schema = schema(type);
     return { content: [{ type: "text", text: `${json_schema}` }] };
-  }
+  },
 );
 
 // Register the guess tool
@@ -53,15 +53,16 @@ server.registerTool(
   "guess",
   {
     title: "Guess XDR Type",
-    description: "Guess what type Stellar XDR is, getting back a list of possible types.",
+    description:
+      "Guess what type Stellar XDR is, getting back a list of possible types.",
     inputSchema: {
       xdr: z.string().describe("Base64 encoded XDR"),
-    }
+    },
   },
-  async ({ xdr }) => {
+  ({ xdr }) => {
     const list = guess(xdr);
     return { content: [{ type: "text", text: `${JSON.stringify(list)}` }] };
-  }
+  },
 );
 
 // Register the decode tool
@@ -69,16 +70,17 @@ server.registerTool(
   "decode",
   {
     title: "Decode XDR to JSON",
-    description: "Decode a Stellar XDR to JSON, given a type name and Base64 XDR.",
+    description:
+      "Decode a Stellar XDR to JSON, given a type name and Base64 XDR.",
     inputSchema: {
       type: z.string().describe("XDR type"),
       xdr: z.string().describe("Base64 encoded XDR"),
-    }
+    },
   },
-  async ({ type, xdr }) => {
+  ({ type, xdr }) => {
     const json = decode(type, xdr);
     return { content: [{ type: "text", text: `${json}` }] };
-  }
+  },
 );
 
 // Register the encode tool
@@ -90,12 +92,12 @@ server.registerTool(
     inputSchema: {
       type: z.string().describe("XDR type"),
       json: z.string().describe("JSON adhering to the types JSON Schema"),
-    }
+    },
   },
-  async ({ type, json }) => {
+  ({ type, json }) => {
     const xdr = encode(type, json);
     return { content: [{ type: "text", text: `${xdr}` }] };
-  }
+  },
 );
 
 async function main() {
