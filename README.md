@@ -1,5 +1,11 @@
 # Stellar MCP Server for XDR
 
+> [!IMPORTANT]
+> This repository has moved to
+> [stellar-experimental/mcp-stellar-xdr](https://github.com/stellar-experimental/mcp-stellar-xdr)
+> and is archived. Please use the new repository for the latest version, issues,
+> and pull requests.
+
 An [Model Context Protocol (MCP)] server that provides tools for interfacing
 with Stellar XDR via XDR-JSON and JSON Schema.
 
